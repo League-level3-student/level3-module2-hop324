@@ -20,6 +20,29 @@ public class BogoSorter extends Sorter {
 	//1. Complete the sort method using the Bogo sort algorithm. 
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
-
+// This is so dumb why would you ever use this. Like literally Bruh. With a name like Bogo I kinda expected this
+	Random randy = new Random();
+	boolean isSorted = false;
+	int holder = array[0];
+	int tracker = 0;
+	while(!isSorted) {
+		for(int i = 1; i < array.length; i++) {
+			if(holder > array[i]) {
+				tracker++;
+			}
+		}
+		if(tracker > 0) {
+			tracker = 0;
+			isSorted = true;
+		}
+		else {
+			tracker = 0;
+			int billy = randy.nextInt(array.length);
+			int silly = randy.nextInt(array.length);
+			int chilly = array[billy];
+			array[billy] = array[silly];
+			array[silly] = chilly;
+		}
+	}
 	}
 }

@@ -13,17 +13,53 @@ public class QuickSorter extends Sorter {
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
 		//10. call the quickSort method with 0 and the length of the array minus one
+		quickSort(array, 0, array.length-1, display);
 	}
 	
 	private void quickSort(int[] array, int low, int high, SortingVisualizer display) {
 		//2. create two integer variables called i and j and set them equal
 		//   to low and high respectively.
-       
+       int i = low;
+       int j = high;
         //3. create an integer called pivot and set it equal to the element
         //   in the array that is the halfway point between low and high
-
+       int pivot = array[((high+low)/2)];
+    //   System.out.println(pivot);
+   //	System.out.println(array[i]);
         //4. make a while loop that goes while i is less than or equal to j
-        
+        while(i <= j) {
+        	while(array[i] < pivot) {
+        		i++;
+        	}
+        	while(j > pivot) {
+        		j--;
+        	}
+        	if(i <= j) {
+        		int swapper = j;
+        		j = i;
+        		i = swapper;
+        		System.out.println("Swapped");
+        		i++;
+        		j--;
+        	}
+        	else {
+        		System.out.println("Not Swapped");
+        		System.out.println(j);
+        		System.out.println(i);
+        	}
+        }
+        System.out.println(j);
+        System.out.println(low);
+        System.out.println("bruh");
+        System.out.println(i);
+        System.out.println(high);
+        System.out.println("Bruhndeed");
+        if(low < j) {
+        	quickSort(array, low, j, display);
+        }
+        if(i < high) {
+        	quickSort(array, i, high, display);
+        }
         	//5. make a while loop that increments i while 
         	//   the array element at i is less than pivot
             
