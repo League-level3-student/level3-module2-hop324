@@ -23,17 +23,18 @@ public class BogoSorter extends Sorter {
 // This is so dumb why would you ever use this. Like literally Bruh. With a name like Bogo I kinda expected this
 	Random randy = new Random();
 	boolean isSorted = false;
-	int holder = array[0];
 	int tracker = 0;
 	while(!isSorted) {
-		for(int i = 1; i < array.length; i++) {
-			if(holder > array[i]) {
+		for(int i = 0; i < array.length-1; i++) {
+			if(array[i] > array[i+1]) {
 				tracker++;
 			}
 		}
-		if(tracker > 0) {
+		System.out.println(tracker);
+		if(tracker == 0) {
 			tracker = 0;
 			isSorted = true;
+			System.out.println("Solved!");
 		}
 		else {
 			tracker = 0;
@@ -42,6 +43,8 @@ public class BogoSorter extends Sorter {
 			int chilly = array[billy];
 			array[billy] = array[silly];
 			array[silly] = chilly;
+			display.updateDisplay();
+			
 		}
 	}
 	}
